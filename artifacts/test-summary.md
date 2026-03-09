@@ -7,7 +7,9 @@
 - `mix docs`
 - `mix hex.build`
 - Tarball `artifacts/pdf_zusammenfuegen-0.1.0.tar` erzeugt
-- `mix hex.publish --dry-run` bis zum Authentifizierungs-Handoff ausgefuehrt
+- `mix hex.publish --dry-run` erfolgreich ausgefuehrt
+- Paket veroeffentlicht: `https://hex.pm/packages/pdf_zusammenfuegen/0.1.0`
+- Docs veroeffentlicht: `https://hexdocs.pm/pdf_zusammenfuegen/0.1.0`
 
 ## Abgedeckte Szenarien
 
@@ -20,15 +22,5 @@
 
 ## Verbleibender Blocker
 
-- `mix hex.publish --dry-run` stoppt erwartungsgemaess bei fehlender Hex-Authentifizierung:
-  - Meldung: `No authenticated user found. Run mix hex.user auth`
-  - fuer den naechsten Schritt musst du `mix hex.user auth` oder `HEX_API_KEY` uebernehmen
-
-## Naechster manueller Schritt
-
-```bash
-cd reference-repos/hex-pm-pdf_zusammenfuegen
-HEX_CACERTS_PATH=/usr/local/etc/openssl@3/cert.pem mix hex.user auth
-HEX_CACERTS_PATH=/usr/local/etc/openssl@3/cert.pem mix hex.publish --dry-run
-HEX_CACERTS_PATH=/usr/local/etc/openssl@3/cert.pem mix hex.publish
-```
+- kein technischer Blocker mehr
+- fuer kuenftige Releases muss lediglich die Version in `mix.exs` und `CHANGELOG.md` erhoeht und danach erneut `mix hex.publish --yes` ausgefuehrt werden
